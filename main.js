@@ -1,6 +1,7 @@
 const datosPersonales =[]
 
 function cargaDatos (){
+    for(let i =0; i<3; i++){
     let nombreApellidos = prompt(`por favor ingrese su nombre y apellido`)
 
     while( nombreApellidos.trim() === ""){
@@ -9,22 +10,18 @@ function cargaDatos (){
 
 }
 if(datosPersonales.includes(nombreApellidos)){
-    alert(`el nombre de usuario ${nombreApellidos} ya esta registrado por favor ingrese otro`)
+    confirm(`el nombre de usuario ${nombreApellidos} ya esta registrado por favor ingrese otro`)
 
-}else{
+}else {
+    (datosPersonales.push(nombreApellidos))
     alert(`binvenido ${nombreApellidos} `)
 }
-if(datosPersonales!=nombreApellidos){
-    datosPersonales.push(nombreApellidos)
-}else{
-    cargaDatos()
+
+ 
 }
 
 }
 
 
-for( let i=0; i<=10;i++ ){
-    cargaDatos()
-}
 console.log(datosPersonales)
 cargaDatos()
